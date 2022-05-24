@@ -1,0 +1,60 @@
+.course-page {
+  display: grid;
+  padding: 8rem 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 4rem;
+}
+
+.course-card {
+  background-color: var(--kc-blue);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-card a{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* COURE DETAILS PAGE */
+.head{
+  padding: 4rem;
+  background-color: #ccc;
+}
+.head .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.head img {
+  width: 20rem;
+  margin-left: 6rem;
+}
+
+.back {
+  background-color: var(--kc-blue);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  width: 80px;
+  cursor: pointer;
+}
+
+.course-details .body{
+  padding: 4rem;
+  line-height: 3rem;
+}
+
+.course-details .body p{
+  margin-bottom: 2rem;
+}
+
+.course-details .body ul{
+  padding-left: 1rem;
+  list-style-type: square;
+}

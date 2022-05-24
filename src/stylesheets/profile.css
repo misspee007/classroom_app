@@ -1,0 +1,23 @@
+.profile-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile{
+  background-color: #ffffff;
+  padding: 6rem 4rem;
+  border-radius: 10px;
+  display: grid;
+  row-gap: 2rem;
+}
+
+.profile-details{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  row-gap: 2rem;
+}
+
+.profile-details .address{
+  grid-column: 1/3;
+}

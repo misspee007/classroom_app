@@ -1,0 +1,46 @@
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+.content-wrap {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary);
+  color: #ccc;
+  border-radius: 25px;
+  padding: 6rem;
+  width: 100%;
+}
+
+.img-wrap{
+  position: relative;
+  height: 100%;
+}
+.male-avatar {
+  width: 22rem;
+  position: absolute;
+  right: 0;
+  bottom: -3rem;
+}
+
+.greeting p {
+  font-size: 2rem;
+}
+
+.dashboard h1 {
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 2rem 4rem;
+  }
+}
