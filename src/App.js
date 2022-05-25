@@ -7,6 +7,7 @@ import data from "./db";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import Admin from "./components/admin/Admin";
 import Dashboard from "./components/admin/Dashboard";
 import Courses from "./components/admin/Courses";
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
           <Route path="/admin" element={<Admin />}>
             <Route path="dashboard" element={<Dashboard />} />

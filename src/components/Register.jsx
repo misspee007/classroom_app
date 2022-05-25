@@ -1,7 +1,6 @@
 import {
   signInWithPopup,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useNavigate, Link } from "react-router-dom";
@@ -12,10 +11,10 @@ import "../stylesheets/login.css";
 import Button from "./Button";
 import student from "../assets/laptop_lady.svg";
 
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate();
 
-  const [user, setUser] = useState({
+  const [newUser, setNewUser] = useState({
     email: "",
     password: "",
   });
@@ -23,20 +22,20 @@ const Login = () => {
   const handleChange = (e) => {
     let value = e.target.value;
 
-    setUser({
-      ...user,
+    setNewUser({
+      ...newUser,
       [e.target.name]: value,
     });
   };
 
-  const handleSignIn = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, user.email, user.password)
+    createUserWithEmailAndPassword(auth, newUser.email, newUser.password)
       .then((res) => {
-        navigate("/admin/dashboard");
+        navigate("/login");
       })
       .catch((error) => {
-        console.log(error.code, error.message);
+        console.log(error);
       });
   };
 
@@ -56,7 +55,7 @@ const Login = () => {
       <section className="login-page">
         <div className="left-cont">
           <div className="txt">
-            <h1>Student Login</h1>
+            <h1>Sign Up</h1>
             <p>make sure your account is secure</p>
           </div>
           <img
@@ -66,12 +65,12 @@ const Login = () => {
           />
         </div>
         <div className="rt-cont">
-          <form onSubmit={handleSignIn}>
+          <form onSubmit={handleSignup}>
             <label>
               <input
                 type="text"
                 placeholder="Enter your email"
-                value={user.email}
+                value={newUser.email}
                 onChange={handleChange}
                 name="email"
               />
@@ -80,29 +79,28 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="Enter your password"
-                value={user.password}
+                value={newUser.password}
                 onChange={handleChange}
                 name="password"
               />
             </label>
-            <Button text="Sign In" type="btn btn-rounded-sm btn-sm btn-blue" />
-          </form>
-          <div>Don't have an account already?</div>
-          <Link to="/login">
             <Button text="Register" type="btn btn-rounded-sm btn-sm btn-blue" />
+            <div>Or</div>
+            <div onClick={SignInWithGoogleFunc}>
+              <Button
+                text="Continue with Google"
+                type="btn btn-rounded-sm btn-sm btn-blue"
+              />
+            </div>
+          </form>
+          <div>Have an account already?</div>
+          <Link to="/login">
+            <Button text="Sign In" type="btn btn-rounded-sm btn-sm btn-blue" />
           </Link>
-
-          <div>Or</div>
-          <div onClick={SignInWithGoogleFunc}>
-            <Button
-              text="Continue with Google"
-              type="btn btn-rounded-sm btn-sm btn-blue"
-            />
-          </div>
         </div>
       </section>
     </>
   );
 };
 
-export default Login;
+export default Register;
