@@ -7,6 +7,7 @@ import data from "./db";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import Admin from "./components/admin/Admin";
 import Dashboard from "./components/admin/Dashboard";
 import Courses from "./components/admin/Courses";
@@ -21,11 +22,12 @@ function App() {
   return (
     <div className="App">
       <DataContext.Provider value={data}>
-        {location.pathname === "/" && <Navbar />}
+        {(location.pathname === "/" || location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/admin/courses/:id") && <Navbar />}
 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
           <Route path="/admin" element={<Admin />}>
             <Route path="dashboard" element={<Dashboard />} />
@@ -37,7 +39,7 @@ function App() {
           <Route path="*" element={<Navigate to={"/"} replace />} />
         </Routes>
 
-        {location.pathname === "/" && <Footer />}
+        {(location.pathname === "/" || location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/admin/courses/:id") && <Footer />}
       </DataContext.Provider>
     </div>
   );
