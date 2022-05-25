@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <DataContext.Provider value={data}>
-        {location.pathname === "/" && <Navbar />}
+        {location.pathname !== "/" && <Navbar />}
 
         <Routes>
           <Route path="/" element={<Home />} />

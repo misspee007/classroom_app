@@ -1,13 +1,18 @@
+import { useEffect, useState } from "react";
 import "../../stylesheets/profile.css";
 
 const ProfilePage = () => {
-  const data = JSON.parse(localStorage.getItem("user"));
+  const [data, setData] = useState();
+  useEffect(() => {
+    setData(JSON.parse(localStorage.getItem("user")));
+  }, [data]);
+
   console.log(data);
   return (
     <div className="profile-wrap">
       <div className="profile">
         <h1>Profile</h1>
-        <img src={data.photoURL} alt="user image" />
+        <img src={data.photoURL} alt="user" />
         <div className="profile-details">
           <div>
             <h3>Name:</h3>

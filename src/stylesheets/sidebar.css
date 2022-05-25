@@ -23,6 +23,10 @@
   align-items: center;
 }
 
+.logo{
+  color: #64a2ff;
+}
+
 /* button{
   background-color: inherit;
   border: none;
