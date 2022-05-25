@@ -82,12 +82,7 @@ const Login = () => {
                 name="password"
               />
             </label>
-            <button type="submit">
-              <Button
-                text="Register"
-                type="btn btn-rounded-sm btn-sm btn-blue"
-              />
-            </button>
+            <Button text="Register" type="btn btn-rounded-sm btn-sm btn-blue" />
 
             <div onClick={SignInWithGoogleFunc}>
               <Button

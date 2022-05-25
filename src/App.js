@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { createContext } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 import "./App.css";
 import data from "./db";
@@ -17,11 +17,12 @@ import Footer from "./components/Footer";
 export const DataContext = createContext();
 
 function App() {
-  const [isCustomLayout, setIsCustomLayout] = useState(second);
+  const location = useLocation();
   return (
     <div className="App">
       <DataContext.Provider value={data}>
-        <Navbar />
+        {location.pathname === "/" && <Navbar />}
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -35,7 +36,8 @@ function App() {
           <Route path="/admin/courses/:id" element={<CourseDetails />} />
           <Route path="*" element={<Navigate to={"/"} replace />} />
         </Routes>
-        {isCustomLayout ? <Footer /> : null}
+
+        {location.pathname === "/" && <Footer />}
       </DataContext.Provider>
     </div>
   );
