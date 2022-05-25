@@ -1,50 +1,46 @@
 import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useNavigate } from "react-router-dom";
-import "../stylesheets/login.css";
-import Button from "./Button";
-import student from "../assets/laptop_lady.svg";
 import { useState } from "react";
 
+import "../stylesheets/login.css";
+
+import Button from "./Button";
+import student from "../assets/laptop_lady.svg";
+
 const Login = () => {
-  const [isValid, setIsValid] = useState(false);
-
-  // const validatePassword = () => {
-  //   setIsValid(true);
-  //   if (password !== "" && confirmPassword !== "") {
-  //     if (password !== confirmPassword) {
-  //       setIsValid(false);
-  //       setError("Passwords does not match");
-  //     }
-  //   }
-  //   return isValid;
-  // };
-
-  // const SignUpWithEmail = (e) => {
-  //   e.preventDefault();
-  //   setError("");
-  //   if (validatePassword()) {
-  //     // Create a new user with email and password using firebase
-  //     createUserWithEmailAndPassword(auth, email, password)
-  //       .then((res) => {
-  //         console.log(res.user);
-  //       })
-  //       .catch((err) => setError(err.message));
-  //   }
-  //   setEmail("");
-  //   setPassword("");
-  //   setConfirmPassword("");
-  // };
-
   const navigate = useNavigate();
+
+  const [newUser, setNewUser] = useState({
+    email: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    let value = e.target.value;
+
+    setNewUser({
+      ...newUser,
+      [e.target.name]: value,
+    });
+  };
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, newUser.email, newUser.password)
+      .then((res) => {
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const SignInWithGoogleFunc = (e) => {
     e.preventDefault();
     signInWithPopup(auth, provider)
       .then((res) => {
-        console.log(res);
-        localStorage.removeItem("user");
-        localStorage.setItem("user", JSON.stringify(res.user));
+        // localStorage.removeItem("user");
+        // localStorage.setItem("user", JSON.stringify(res.user));
         navigate("/admin/dashboard");
       })
       .catch((error) => {
@@ -67,16 +63,28 @@ const Login = () => {
           />
         </div>
         <div className="rt-cont">
-          <form>
+          <form onSubmit={handleSignup}>
             <label>
-              <input type="text" placeholder="Enter your email" />
+              <input
+                type="text"
+                placeholder="Enter your email"
+                value={newUser.email}
+                onChange={handleChange}
+                name="email"
+              />
             </label>
             <label>
-              <input type="password" placeholder="Enter your password" />
+              <input
+                type="password"
+                placeholder="Enter your password"
+                value={newUser.password}
+                onChange={handleChange}
+                name="password"
+              />
             </label>
-            <Button text="Sign In" type="btn btn-rounded-sm btn-sm btn-blue" />
+            <Button text="Register" type="btn btn-rounded-sm btn-sm btn-blue" />
 
-            <div onClick={(e) => SignInWithGoogleFunc(e)}>
+            <div onClick={SignInWithGoogleFunc}>
               <Button
                 text="Continue with Google"
                 type="btn btn-rounded-sm btn-sm btn-blue"

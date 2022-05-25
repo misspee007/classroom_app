@@ -13,7 +13,7 @@ const Home = () => {
             nihil ex maxime!
           </p>
         </div>
-        <img src={heroImg} alt="girl with two books" class="hero-img" />
+        <img src={heroImg} alt="girl with two books" className="hero-img" />
       </section>
     </>
   );
