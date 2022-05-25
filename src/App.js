@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import "./App.css";
@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 export const DataContext = createContext();
 
 function App() {
+  const [isCustomLayout, setIsCustomLayout] = useState(second);
   return (
     <div className="App">
       <DataContext.Provider value={data}>
@@ -34,7 +35,7 @@ function App() {
           <Route path="/admin/courses/:id" element={<CourseDetails />} />
           <Route path="*" element={<Navigate to={"/"} replace />} />
         </Routes>
-        <Footer />
+        {isCustomLayout ? <Footer /> : null}
       </DataContext.Provider>
     </div>
   );

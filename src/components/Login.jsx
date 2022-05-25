@@ -9,38 +9,36 @@ import Button from "./Button";
 import student from "../assets/laptop_lady.svg";
 
 const Login = () => {
-  const [loginCredentials, setLoginCredentials] = useState({
+  const navigate = useNavigate();
+
+  const [newUser, setNewUser] = useState({
     email: "",
     password: "",
   });
   const handleChange = (e) => {
     let value = e.target.value;
 
-    setLoginCredentials({
-      ...loginCredentials,
+    setNewUser({
+      ...newUser,
       [e.target.name]: value,
     });
   };
 
   const handleSignup = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, loginCredentials.email, loginCredentials.password)
+    createUserWithEmailAndPassword(auth, newUser.email, newUser.password)
       .then((res) => {
-        console.log(res);
-        // navigate("/login");
+        navigate("/login");
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-  const navigate = useNavigate();
-
   const SignInWithGoogleFunc = (e) => {
     e.preventDefault();
     signInWithPopup(auth, provider)
       .then((res) => {
-        // console.log(res);
         // localStorage.removeItem("user");
         // localStorage.setItem("user", JSON.stringify(res.user));
         navigate("/admin/dashboard");
@@ -70,7 +68,7 @@ const Login = () => {
               <input
                 type="text"
                 placeholder="Enter your email"
-                value={loginCredentials.email}
+                value={newUser.email}
                 onChange={handleChange}
                 name="email"
               />
@@ -79,7 +77,7 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="Enter your password"
-                value={loginCredentials.password}
+                value={newUser.password}
                 onChange={handleChange}
                 name="password"
               />

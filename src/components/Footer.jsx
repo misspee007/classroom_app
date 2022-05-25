@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-top">
-        <Link to="/" className="logo-cont">
-          <p>Classroom</p>
+        <Link to="/" className="logo">
+          <p>CLASSROOM</p>
         </Link>
         <Link to="/login">
           <Button text="Get Started" type="btn btn-rounded btn-rg btn-green" />

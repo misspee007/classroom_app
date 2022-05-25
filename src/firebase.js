@@ -3,7 +3,6 @@ import { getFirestore } from "firebase/firestore";
 import {
   GoogleAuthProvider,
   getAuth,
-  createUserWithEmailAndPassword,
   signOut,
   signInWithEmailAndPassword,
 } from "firebase/auth";

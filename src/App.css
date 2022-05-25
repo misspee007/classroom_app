@@ -9,3 +9,9 @@ body{
   font-family: 'Poppins', sans-serif;
   color: var(--primary);
 }
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
