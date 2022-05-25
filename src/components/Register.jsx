@@ -1,7 +1,4 @@
-import {
-  signInWithPopup,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
+import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
@@ -52,7 +49,7 @@ const Register = () => {
 
   return (
     <>
-      <section className="login-page">
+      <section className="login-page" id="reg-page">
         <div className="left-cont">
           <div className="txt">
             <h1>Sign Up</h1>
@@ -85,18 +82,23 @@ const Register = () => {
               />
             </label>
             <Button text="Register" type="btn btn-rounded-sm btn-sm btn-blue" />
-            <div>Or</div>
-            <div onClick={SignInWithGoogleFunc}>
+            <p className="or">Or</p>
+            <div onClick={SignInWithGoogleFunc} className="google">
               <Button
                 text="Continue with Google"
                 type="btn btn-rounded-sm btn-sm btn-blue"
               />
             </div>
           </form>
-          <div>Have an account already?</div>
-          <Link to="/login">
-            <Button text="Sign In" type="btn btn-rounded-sm btn-sm btn-blue" />
-          </Link>
+          <div className="btm">
+            <p className="btm-txt">Have an account already?</p>
+            <Link to="/login">
+              <Button
+                text="Sign In"
+                type="btn btn-rounded-sm btn-sm btn-blue"
+              />
+            </Link>
+          </div>
         </div>
       </section>
     </>

@@ -32,9 +32,9 @@ const Sidebar = () => {
           <Link to="/admin/profile">Profile</Link>
         </li>
         <li>
-          <Link onClick={handleLogOut}>
+          <div onClick={handleLogOut}>
             <Button text="Log out" type="btn btn-rounded-sm btn-sm btn-green" />
-          </Link>
+          </div>
         </li>
         <div></div>
       </ul>

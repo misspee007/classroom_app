@@ -37,6 +37,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error.code, error.message);
+        alert(error.message);
       });
   };
 
@@ -87,17 +88,22 @@ const Login = () => {
             </label>
             <Button text="Sign In" type="btn btn-rounded-sm btn-sm btn-blue" />
           </form>
-          <div>Don't have an account already?</div>
-          <Link to="/login">
-            <Button text="Register" type="btn btn-rounded-sm btn-sm btn-blue" />
-          </Link>
+          <div className="btm">
+            <p className="btm-txt">Don't have an account already?</p>
+            <Link to="/register">
+              <Button
+                text="Register"
+                type="btn btn-rounded-sm btn-sm btn-blue"
+              />
+            </Link>
 
-          <div>Or</div>
-          <div onClick={SignInWithGoogleFunc}>
-            <Button
-              text="Continue with Google"
-              type="btn btn-rounded-sm btn-sm btn-blue"
-            />
+            <p>Or</p>
+            <div onClick={SignInWithGoogleFunc}>
+              <Button
+                text="Continue with Google"
+                type="btn btn-rounded-sm btn-sm btn-blue"
+              />
+            </div>
           </div>
         </div>
       </section>

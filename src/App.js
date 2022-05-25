@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <DataContext.Provider value={data}>
-        {location.pathname !== "/" && <Navbar />}
+        {(location.pathname === "/" || location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/admin/courses/:id") && <Navbar />}
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -39,7 +39,7 @@ function App() {
           <Route path="*" element={<Navigate to={"/"} replace />} />
         </Routes>
 
-        {location.pathname === "/" && <Footer />}
+        {(location.pathname === "/" || location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/admin/courses/:id") && <Footer />}
       </DataContext.Provider>
     </div>
   );
