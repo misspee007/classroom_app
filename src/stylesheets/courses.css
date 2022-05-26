@@ -21,7 +21,7 @@
 /* COURE DETAILS PAGE */
 .head{
   padding: 4rem;
-  background-color: #ccc;
+  background-color: #f2f2f2;
 }
 .head .title {
   display: flex;
@@ -48,6 +48,7 @@
 .course-details .body{
   padding: 4rem;
   line-height: 3rem;
+  background-color: #fff;
 }
 
 .course-details .body p{
