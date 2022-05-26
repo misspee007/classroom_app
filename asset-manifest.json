@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/classroom_app/static/css/main.1e94387b.css",
-    "main.js": "/classroom_app/static/js/main.142cc884.js",
+    "main.css": "/classroom_app/static/css/main.99a241dc.css",
+    "main.js": "/classroom_app/static/js/main.a5ad12ea.js",
     "static/js/787.f9a249d9.chunk.js": "/classroom_app/static/js/787.f9a249d9.chunk.js",
     "static/media/teacher.svg": "/classroom_app/static/media/teacher.1d33e3105ab8b0a0c7ae1fd52bac4e9a.svg",
     "static/media/laptop_lady.svg": "/classroom_app/static/media/laptop_lady.6a746bf3ebeee7aa057197097437296c.svg",
@@ -9,12 +9,12 @@
     "static/media/education.svg": "/classroom_app/static/media/education.b848e5ace735f917dd604cf905e3fe88.svg",
     "index.html": "/classroom_app/index.html",
     "static/media/unknown_avatar.svg": "/classroom_app/static/media/unknown_avatar.6b98b9e28dfab66d9b9fd666f5192350.svg",
-    "main.1e94387b.css.map": "/classroom_app/static/css/main.1e94387b.css.map",
-    "main.142cc884.js.map": "/classroom_app/static/js/main.142cc884.js.map",
+    "main.99a241dc.css.map": "/classroom_app/static/css/main.99a241dc.css.map",
+    "main.a5ad12ea.js.map": "/classroom_app/static/js/main.a5ad12ea.js.map",
     "787.f9a249d9.chunk.js.map": "/classroom_app/static/js/787.f9a249d9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e94387b.css",
-    "static/js/main.142cc884.js"
+    "static/css/main.99a241dc.css",
+    "static/js/main.a5ad12ea.js"
   ]
 }
