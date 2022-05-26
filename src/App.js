@@ -22,7 +22,9 @@ function App() {
   return (
     <div className="App">
       <DataContext.Provider value={data}>
-        {(location.pathname === "/" || location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/admin/courses/:id") && <Navbar />}
+        {(location.pathname === "/" ||
+          location.pathname === "/login" ||
+          location.pathname === "/register") && <Navbar />}
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -33,13 +35,15 @@ function App() {
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="courses" element={<Courses />} />
             <Route path="profile" element={<ProfilePage />} />
+            <Route path="courses/:id" element={<CourseDetails />} />
           </Route>
 
-          <Route path="/admin/courses/:id" element={<CourseDetails />} />
           <Route path="*" element={<Navigate to={"/"} replace />} />
         </Routes>
 
-        {(location.pathname === "/" || location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/admin/courses/:id") && <Footer />}
+        {(location.pathname === "/" ||
+          location.pathname === "/login" ||
+          location.pathname === "/register") && <Footer />}
       </DataContext.Provider>
     </div>
   );
