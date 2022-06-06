@@ -3,8 +3,6 @@ import { getFirestore } from "firebase/firestore";
 import {
   GoogleAuthProvider,
   getAuth,
-  signOut,
-  signInWithEmailAndPassword,
 } from "firebase/auth";
 
 const firebaseConfig = {
