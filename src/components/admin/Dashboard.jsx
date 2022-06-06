@@ -1,9 +1,8 @@
-import { getAuth } from "firebase/auth";
+import { auth } from "../../firebase";
 import "../../stylesheets/dashboard.css";
 import avatar from "../../assets/male.svg";
 
 const Dashboard = () => {
-  const auth = getAuth();
   const user = auth.currentUser;
 
   return (

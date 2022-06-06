@@ -2,11 +2,11 @@ import Sidebar from "./Sidebar";
 import "../../stylesheets/admin.css";
 import { Outlet } from "react-router-dom";
 
-const Admin = () => {
+const Admin = ({isMobile}) => {
   return (
     <>
       <section className="admin">
-        <Sidebar />
+        {!isMobile && <Sidebar />}
         <Outlet />
       </section>
     </>
