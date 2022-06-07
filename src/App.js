@@ -27,8 +27,6 @@ function App() {
   const [isMobile, setIsMobile] = useState(false);
   const [isCustomLayout, setIsCustomLayout] = useState(false);
 
-  setIsMobile(isMobileDevice);
-  
   useEffect(() => {
     if (
       location.pathname === "/" ||
@@ -37,7 +35,8 @@ function App() {
     ) {
       setIsCustomLayout(true);
     }
-  }, [location.pathname]);
+    setIsMobile(isMobileDevice);
+  }, [isMobileDevice, location.pathname]);
 
   return (
     <div className="App">

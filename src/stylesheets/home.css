@@ -16,7 +16,7 @@
   font-size: 2rem;
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 769px) {
   .hero-section{
     flex-direction: row;
     align-items: center;
@@ -34,7 +34,26 @@
   }
   .hero-img{
     width: 40%;
+    height: 100%;
     margin: 0;
     padding-right: 4rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-section{
+    padding: 4.2rem;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  .hero-section h1{
+    font-size: 4rem;
+  }
+  .hero-section p{
+    font-size: 1.2rem;
+  }
+  .hero-img{
+    width: 50%;
   }
 }
