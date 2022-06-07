@@ -11,7 +11,8 @@ const CourseDetails = () => {
 
   return (
     <>
-      {courseData.map((course) => {
+      {courseData.forEach((course) => {
+        // eslint-disable-next-line eqeqeq
         if (course.id == id) {
           return (
             <section className="course-details" key={course.id}>

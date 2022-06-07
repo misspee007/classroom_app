@@ -15,16 +15,16 @@ const Footer = () => {
         </Link>
       </div>
       <div className="socials">
-        <a href="#">
+        <a href="www.facebook.com" target="_blank">
           <i className="bi bi-facebook" aria-label="Facebook"></i>
         </a>
-        <a href="#">
+        <a href="www.twitter.com" target="_blank">
           <i className="bi bi-twitter" aria-label="Twitter"></i>
         </a>
-        <a href="#">
+        <a href="www.pinterest.com" target="_blank">
           <i className="bi bi-pinterest" aria-label="Pinterest"></i>
         </a>
-        <a href="#">
+        <a href="www.instagram.com" target="_blank">
           <i className="bi bi-instagram" aria-label="Instagram"></i>
         </a>
       </div>
