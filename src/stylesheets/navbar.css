@@ -4,6 +4,10 @@
   align-items: center;
   padding: 2rem 1.5rem 1rem 1.5rem;
 }
+@media screen and (max-width: 768px) {
+  .nav {
+  }
+}
 
 .nav .logo p {
   color: #6ba1f3;
@@ -20,6 +24,8 @@
   flex-direction: column;
   padding: 1rem 0 1rem 0;
   z-index: 1;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
 }
 
 .menu li{

@@ -1,6 +1,14 @@
-.admin{
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  height: 100vh;
-  background-color: #f2f2f2;
+.admin {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 769px) {
+  .admin {
+    height: 100vh;
+    justify-content: initial;
+    background-color: #f2f2f2;
+  }
 }
