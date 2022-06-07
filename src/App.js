@@ -24,9 +24,11 @@ function App() {
   let details = navigator.userAgent;
   let regexp = /android|iphone|kindle|ipad/i;
   let isMobileDevice = regexp.test(details);
-  const [isMobile, setIsMobile] = useState(isMobileDevice);
+  const [isMobile, setIsMobile] = useState(false);
   const [isCustomLayout, setIsCustomLayout] = useState(false);
 
+  setIsMobile(isMobileDevice);
+  
   useEffect(() => {
     if (
       location.pathname === "/" ||
