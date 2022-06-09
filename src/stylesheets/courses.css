@@ -14,7 +14,7 @@
   padding: 1rem 0;
 }
 
-.course-card a {
+.course-page a {
   color: #fff;
   text-decoration: none;
 }
@@ -68,14 +68,15 @@
   .course-page {
     padding: 8rem 4rem;
     grid-gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
   }
 
   .course-card {
-    padding: 0;
+    padding: 25% 0;
   }
 
   .course-card h2 {
-    font-size: initial;
+    /* font-size: 1.5em; */
   }
 
   /* COURE DETAILS PAGE */

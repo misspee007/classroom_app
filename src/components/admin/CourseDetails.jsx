@@ -9,9 +9,10 @@ const CourseDetails = () => {
   const navigate = useNavigate();
   let { id } = useParams();
 
+
   return (
     <>
-      {courseData.forEach((course) => {
+      {courseData.map((course) => {
         // eslint-disable-next-line eqeqeq
         if (course.id == id) {
           return (
@@ -38,6 +39,7 @@ const CourseDetails = () => {
             </section>
           );
         }
+        return null;
       })}
     </>
   );

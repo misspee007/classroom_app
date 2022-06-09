@@ -18,7 +18,6 @@ const ProfilePage = () => {
     setEmail(user.email ? user.email : "----");
     setAddress(user.address || "----");
     setSrc(user.src || avatar);
-    console.log(user.src);
   }, []);
 
   return (

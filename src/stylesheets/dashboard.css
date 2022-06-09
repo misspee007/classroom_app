@@ -24,19 +24,16 @@
   font-size: 1.5rem;
 }
 
-
 @media screen and (min-width: 769px) {
   .content-wrap {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    justify-content: space-between;
-    align-items: center;
+    text-align: left;
     background-color: var(--primary);
     border-radius: 25px;
     padding: 6rem;
     width: 100%;
     color: #ccc;
-    padding: 2rem 2rem 4rem;
   }
 
   .img-wrap {
@@ -59,5 +56,17 @@
 
   .dashboard h1 {
     font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .dashboard {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .content-wrap{
+    padding: 10rem;
+    grid-template-columns: 1fr 1fr;
   }
 }

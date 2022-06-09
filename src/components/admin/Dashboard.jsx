@@ -3,14 +3,12 @@ import "../../stylesheets/dashboard.css";
 import avatar from "../../assets/male.svg";
 
 const Dashboard = () => {
-  // const user = auth.currentUser;
   const [displayName, setDisplayName] = useState('User');
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     setDisplayName(user.name || user.email.split("@")[0]);
   }, [])
-  
 
   return (
     <>

@@ -7,7 +7,7 @@
 
 @media screen and (min-width: 769px) {
   .admin {
-    height: 100vh;
+    min-height: 100vh;
     justify-content: initial;
     background-color: #f2f2f2;
   }

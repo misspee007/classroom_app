@@ -9,9 +9,11 @@ const Courses = () => {
   return (
     <section className="course-page">
       {data.map((course) => (
-        <div key={course.id} className="course-card">
+        <div key={course.id}>
           <Link to={`/admin/courses/${course.id}`}>
-            <h2>{course.name.toUpperCase()}</h2>
+            <div className="course-card">
+              <h2>{course.name.toUpperCase()}</h2>
+            </div>
           </Link>
         </div>
       ))}
