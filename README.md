@@ -5,14 +5,21 @@ A dynamic, responsive web application built with ReactJs.
 
 [View Live](https://misspee007.github.io/classroom_app/)
 
+### Screenshots
+
+![](https://github.com/misspee007/classroom_app/blob/main/public/Screenshot_d_1.png)
+![](https://github.com/misspee007/classroom_app/blob/main/public/Screenshot_d_4.png)
+![](https://github.com/misspee007/classroom_app/blob/main/public/Screenshot_m_2.png)
+![](https://github.com/misspee007/classroom_app/blob/main/public/Screenshot_m_4.png)
+
 #### Skills used in this app
 
-- Firebase Google authentication
-- Firebase email and password authentication
 - React router v6
 - React effects with useEffect()
 - React state with useState()
-- Parent and child components
+- Firebase Google authentication
+- Firebase email and password authentication
+- State management with Context API
 - Responsive web design
 
 ### Local Setup
