@@ -1,34 +1,50 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
-import "../stylesheets/navbar.css"
+import "../stylesheets/navbar.css";
 import Button from "./Button";
 
-const MobileNav = ({isCustomLayout}) => {
+const MobileNav = () => {
   const navigate = useNavigate();
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [isCustomLayout, setIsCustomLayout] = useState(true);
+
+  const location = useLocation();
+  useEffect(() => {
+    if (
+      location.pathname === "/" ||
+      location.pathname === "/login" ||
+      location.pathname === "/register"
+    ) {
+      setIsCustomLayout(true);
+    } else {
+      setIsCustomLayout(false);
+    }
+  }, [location.pathname]);
 
   const toggleHamburger = () => {
     hamburgerOpen ? setHamburgerOpen(false) : setHamburgerOpen(true);
   };
 
-  const handleLogOut = (e) => {
-    e.preventDefault();
-    signOut(auth).then(() => {
-      navigate("/");
-    }).catch((error) => {
-      console.log(error);
-    });
-  }
+  const handleLogOut = () => {
+    signOut(auth)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-  const handleBtnClick = () => {
+  const handleBtnClick = (e) => {
+    e.preventDefault();
     if (isCustomLayout) {
       navigate("/login");
     } else {
-      handleLogOut()
+      handleLogOut();
     }
-  }
+  };
 
   return (
     <nav className="nav">
@@ -48,7 +64,10 @@ const MobileNav = ({isCustomLayout}) => {
         </li>
         <li>
           <div onClick={handleBtnClick}>
-            <Button text={isCustomLayout ? "Sign In" : "Log Out"} type="btn btn-rounded-sm btn-sm btn-green" />
+            <Button
+              text={isCustomLayout ? "Sign In" : "Log Out"}
+              type="btn btn-rounded-sm btn-sm btn-green"
+            />
           </div>
         </li>
       </ul>

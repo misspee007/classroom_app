@@ -25,8 +25,6 @@ function App() {
   let regexp = /android|iphone|kindle|ipad/i;
   let isMobileDevice = regexp.test(details);
   const [isMobile, setIsMobile] = useState(false);
-  // eslint-disable-next-line no-unused-vars
-  const [isCustomLayout, setIsCustomLayout] = useState(false);
 
   useEffect(() => {
     setIsMobile(isMobileDevice);
@@ -37,7 +35,7 @@ function App() {
       <DataContext.Provider value={data}>
         {/* Renders navbar conditionally */}
         {isMobile ? (
-          <MobileNav isCustomLayout={isCustomLayout} />
+          <MobileNav />
         ) : (
           (location.pathname === "/" ||
             location.pathname === "/login" ||
