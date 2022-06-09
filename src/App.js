@@ -25,19 +25,14 @@ function App() {
   let regexp = /android|iphone|kindle|ipad/i;
   let isMobileDevice = regexp.test(details);
   const [isMobile, setIsMobile] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [isCustomLayout, setIsCustomLayout] = useState(false);
 
-  // setIsMobile(isMobileDevice);
+  useEffect(() => {
+    setIsMobile(isMobileDevice);
+  }, [isMobileDevice]);
 
-  // useEffect(() => {
-  //   if (
-  //     location.pathname === "/" ||
-  //     location.pathname === "/login" ||
-  //     location.pathname === "/register"
-  //   ) {
-  //     setIsCustomLayout(true);
-  //   }
-  // }, [location.pathname]);
+  console.log(isMobile);
 
   return (
     <div className="App">
