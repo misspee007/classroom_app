@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { auth } from "../../firebase";
 import "../../stylesheets/dashboard.css";
 import avatar from "../../assets/male.svg";
 
