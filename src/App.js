@@ -32,8 +32,6 @@ function App() {
     setIsMobile(isMobileDevice);
   }, [isMobileDevice]);
 
-  console.log(isMobile);
-
   return (
     <div className="App">
       <DataContext.Provider value={data}>
@@ -61,7 +59,13 @@ function App() {
           <Route path="*" element={<Navigate to={"/"} replace />} />
         </Routes>
 
-        {isMobile ? <Footer /> : isCustomLayout && <Footer />}
+        {isMobile ? (
+          <Footer />
+        ) : (
+          (location.pathname === "/" ||
+            location.pathname === "/login" ||
+            location.pathname === "/register") && <Footer />
+        )}
       </DataContext.Provider>
     </div>
   );
