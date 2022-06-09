@@ -1,7 +1,4 @@
-import {
-  signInWithPopup,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
@@ -32,6 +29,16 @@ const Login = () => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, user.email, user.password)
       .then((res) => {
+        const {
+          displayName: name,
+          email,
+          address,
+          photoURL: src,
+          accessToken: token,
+        } = res.user;
+        const user = { name, email, address, src, token };
+        localStorage.setItem("user", JSON.stringify(user));
+
         navigate("/admin/dashboard");
       })
       .catch((error) => {
@@ -44,10 +51,21 @@ const Login = () => {
     e.preventDefault();
     signInWithPopup(auth, provider)
       .then((res) => {
+        const {
+          displayName: name,
+          email,
+          address,
+          photoURL: src,
+          accessToken: token,
+        } = res.user;
+        const user = { name, email, address, src, token };
+        localStorage.setItem("user", JSON.stringify(user));
+
         navigate("/admin/dashboard");
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.code, error.message);
+        alert(error.message);
       });
   };
 
