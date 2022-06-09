@@ -27,21 +27,29 @@ function App() {
   const [isMobile, setIsMobile] = useState(false);
   const [isCustomLayout, setIsCustomLayout] = useState(false);
 
-  useEffect(() => {
-    if (
-      location.pathname === "/" ||
-      location.pathname === "/login" ||
-      location.pathname === "/register"
-    ) {
-      setIsCustomLayout(true);
-    }
-    setIsMobile(isMobileDevice);
-  }, [isMobileDevice, location.pathname]);
+  // setIsMobile(isMobileDevice);
+
+  // useEffect(() => {
+  //   if (
+  //     location.pathname === "/" ||
+  //     location.pathname === "/login" ||
+  //     location.pathname === "/register"
+  //   ) {
+  //     setIsCustomLayout(true);
+  //   }
+  // }, [location.pathname]);
 
   return (
     <div className="App">
       <DataContext.Provider value={data}>
-        {isMobile ? <MobileNav isCustomLayout={isCustomLayout} /> : isCustomLayout && <Navbar />}
+        {/* Renders navbar conditionally */}
+        {isMobile ? (
+          <MobileNav isCustomLayout={isCustomLayout} />
+        ) : (
+          (location.pathname === "/" ||
+            location.pathname === "/login" ||
+            location.pathname === "/register") && <Navbar />
+        )}
 
         <Routes>
           <Route path="/" element={<Home />} />
